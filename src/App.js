@@ -1,5 +1,5 @@
 import React from "react";
-import MemoryCard from "./components/MemoryCard.jsx";
+import MemoryCard from "./components/MemoryCardBack.jsx";
 import "./App.css";
 
 function App() {
