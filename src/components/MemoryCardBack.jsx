@@ -1,9 +1,23 @@
 import React, { Component } from "react";
 import "./MemoryCardBack.css";
 class MemoryCard extends Component {
+  constructor() {
+    super();
+    this.state = { isFlipped: false };
+  }
+  clickHandler() {
+    this.setState({
+      isFlipped: !this.state.isFlipped
+    });
+  }
   render() {
+    let memoryCardInnerClass = "MemoryCardInner";
+
+    this.state.isFlipped
+      ? (memoryCardInnerClass = memoryCardInnerClass + " flipped")
+      : (memoryCardInnerClass = "MemoryCardInner");
     return (
-      <div class="MemoryCard">
+      <div class="MemoryCard" onClick="{this.clickHandler}">
         <div class="MemoryCardInner">
           <div class="MemoryCardBack">
             <img
