@@ -6,7 +6,11 @@ import "./App.css";
    const symbols = [`∆`,` ß`, `£`, `§`,`•`, `$`, `+`, `ø`],
    let deck = []
    let i = 0
-   for deck if i < 16, i++
+    for (let i = 0; i < 16;i ++ ) {
+    deck.push({
+      isFlipped: false,
+      Symbol: symbols[i % 8]
+    });
  }
 
 class Comp extends Component {
