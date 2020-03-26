@@ -1,27 +1,14 @@
 import React, { Component } from "react";
 import "./MemoryCardBack.css";
 class MemoryCard extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isFlipped: false
-    };
-  }
-
-  clickHandler = () => {
-    this.setState({
-      isFlipped: !this.state.isFlipped
-    });
-  };
-
   render() {
-    const { isFlipped } = this.state;
+    const { isFlipped } = this.props;
 
     const memoryCardInnerClass =
       "MemoryCardInner " + (isFlipped === true && "flipped");
 
     return (
-      <div className="MemoryCard" onClick={this.clickHandler}>
+      <div className="MemoryCard" onClick={this.props.pickCard}>
         <div className={memoryCardInnerClass}>
           <div className="MemoryCardBack">
             <img
