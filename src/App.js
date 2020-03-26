@@ -34,6 +34,33 @@ class App extends Component {
       pickedCards: []
     };
   }
+  pickCard(cardIndex) {
+    if (this.state.deck[cardIndex].isFlipped) {
+      return;
+    }
+    let cardToFlip = { ...this.state.deck[cardIndex] };
+    cardToFlip.isFlipped = true;
+    let newPickedCards = this.state.pickedCards.concat(cardIndex);
+    let newDeck = this.state.deck.map((card, index) => {
+      if (cardIndex === index) {
+        return cardToFlip;
+      }
+      return card;
+    });
+    if (newPickedCards.length === 2) {
+      let card1Index = newPickedCards[0],
+        card2Index = newPickedCards[1];
+      if (card1Index != card2Index) {
+        setTimeout(this.unflipCards.bind(this, card1Index, card2Index), 1000);
+      }
+      newPickedCards = [];
+    }
+    this.setState({
+      deck: newDeck,
+      pickedCards: newPickedCards
+    });
+  }
+
   render() {
     const cardsJSX = this.state.deck.map((card, index) => {
       return (
