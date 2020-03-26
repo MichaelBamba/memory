@@ -31,7 +31,7 @@
   color: #61dafb;
 }
 .cardRow {
-  display: table-row;
+  display: flex;
   float: left;
 }
 

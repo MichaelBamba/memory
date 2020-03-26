@@ -27,11 +27,11 @@ class MemoryCard extends Component {
             <img
               src="https://www.digitalcrafts.com/img/digitalcrafts-logo-white-y.png"
               alt="logo"
-              class="img"
+              className="img"
             />
           </div>
           <div className="MemoryCardFront">
-            <p>∆</p>
+            <p>{this.props.symbol}</p>
           </div>
         </div>
       </div>
